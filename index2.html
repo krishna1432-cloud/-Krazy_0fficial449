@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Fire Tournament</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #00eaff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Background Video */
+video#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: brightness(40%);
+}
+
+h1 {
+    font-size: 35px;
+    text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00eaff; }
+  to { text-shadow: 0 0 40px #00eaff; }
+}
+
+/* Neon Box */
+.container {
+    padding: 30px;
+    margin: 25px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border: 2px solid #00eaff;
+}
+
+/* Inputs */
+input {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #00eaff;
+    margin: 8px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.5);
+    color: #00eaff;
+}
+
+/* Buttons */
+button, .btn-link {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #00eaff;
+    color: #000;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #00eaff, 0 0 40px #00eaff;
+}
+button:hover, .btn-link:hover {
+    transform: scale(1.15);
+}
+
+/* Hide Area */
+.hidden { display: none; }
+
+</style>
+</head>
+<body>
+
+<video autoplay loop muted id="bgVideo">
+  <source src="https://videos.pexels.com/video-files/2600537/2600537-hd_1080_1920_30fps.mp4" type="video/mp4">
+</video>
+
+<h1>🔥 FREE FIRE CUSTOM TOURNAMENT 🔥</h1>
+
+<div class="container">
+    <p><b>ENTRY FEE:</b> ₹200 Per Team</p>
+    <p><b>PRIZE POOL:</b> ₹2000 + BONUS</p>
+
+    <button id="joinBtn">🚀 JOIN NOW</button>
+
+    <!-- FORM -->
+    <div id="teamForm" class="hidden">
+        <h2>TEAM REGISTRATION</h2>
+
+        <input type="text" placeholder="Team Owner Name" required>
+        <input type="text" placeholder="Team Name" required>
+        <input type="text" placeholder="Owner UID" required>
+        <input type="number" placeholder="Contact Number" required>
+        <input type="text" placeholder="Instagram ID" required>
+        <input type="email" placeholder="Owner Email" required>
+
+        <h3>Team Players</h3>
+
+        <input type="text" placeholder="Player 1 UID" required>
+        <input type="number" placeholder="Player 1 Contact Number" required>
+
+        <input type="text" placeholder="Player 2 UID" required>
+        <input type="number" placeholder="Player 2 Contact Number" required>
+
+        <input type="text" placeholder="Player 3 UID" required>
+        <input type="number" placeholder="Player 3 Contact Number" required>
+
+        <button id="nextBtn">Next → Payment</button>
+    </div>
+
+    <!-- PAYMENT -->
+    <div id="paymentSection" class="hidden">
+        <h2>🎮 Complete Payment</h2>
+        <p>Pay Entry Fee: ₹200</p>
+
+        <a id="payNowLink" class="btn-link">💰 PAY NOW</a>
+
+        <p style="margin-top:18px;">Upload payment proof (Screenshot)</p>
+        <form action="mailto:das083138@gmail.com" method="POST" enctype="multipart/form-data">
+            <input type="file" required>
+            <button>Send Proof ✔</button>
+        </form>
+    </div>
+
+    <hr style="margin:20px; border-color:#00eaff;">
+
+    <!-- New Buttons -->
+    <a href="https://whatsapp.com/channel/0029Vb77HNDDjiOdixhF6i35" class="btn-link">📢 Join WhatsApp Channel</a><br><br>
+    <a href="https://youtube.com/@krazy_0fficial449" class="btn-link">▶ Subscribe YouTube Channel</a>
+
+    <p style="margin-top:15px; color:#fff;">
+        📢 Tournament updates, slot info, match time & room ID/password <br>
+        <b>sirf WhatsApp channel par diya jayega</b> — join zarur kare 🔥
+    </p>
+
+    <p style="margin-top:10px; color:#ff0095;">
+        WhatsApp & YouTube Channel par har update Sabse Pehle milega — Join Now & Stay Updated
+        ❤️ Please subscribe YouTube channel — Support karo & giveaways jeeto!
+    </p>
+
+</div>
+
+<script>
+document.getElementById("joinBtn").onclick = () => {
+    document.getElementById("teamForm").classList.remove("hidden");
+};
+document.getElementById("nextBtn").onclick = () => {
+    document.getElementById("paymentSection").classList.remove("hidden");
+};
+
+document.getElementById("payNowLink").href =
+"upi://pay?pa=8822694824@fam&pn=TournamentFee&am=200&cu=INR&tn=FreeFireTournament";
+</script>
+
+</body>
+</html>
